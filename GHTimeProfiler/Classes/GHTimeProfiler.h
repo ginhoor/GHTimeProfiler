@@ -21,23 +21,18 @@ NS_ASSUME_NONNULL_BEGIN
 @interface GHTimeProfiler : NSObject
 
 + (void)setDelegate:(id<GHTimeProfilerDelegate>)delegate;
-/**
- 开始记录
- */
+/// 开始记录
 + (void)start;
 
 + (void)startWithMaxDepth:(int)depth;
 + (void)startWithMinTimeCallCost:(double)ms;
 + (void)startWithMaxDepth:(int)depth minTimeCallCost:(double)ms;
+/// 保存记录，暂停后调用 [GHTimeProfiler save]，查看记录
++ (void)save;
 
-/**
- 停止记录，不删除记录缓存
- */
+/// 停止记录，不删除记录缓存
 + (void)stop;
-
-/**
- 停止记录，并且保存，随后删除记录缓存。
- */
+/// 停止记录，并且保存，随后删除记录缓存。
 + (void)stopSaveAndClean;
 
 @end

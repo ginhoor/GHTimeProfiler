@@ -8,7 +8,6 @@
 
 #import "GHTimeProfilerHeader.h"
 #import "GHTimeProfilerLogManager.h"
-
 #import "GHTimeProfilerLog.h"
 
 @implementation GHTimeProfilerLogManager
@@ -63,7 +62,7 @@
 
     if ([[NSFileManager defaultManager] fileExistsAtPath:dbFilePath]) {
 #ifdef GHTIMEPROFILER_LOG_ENABLE
-        NSLog(@"GHTimerProfiler db file exists-->%@",dbFilePath);
+        NSLog(@"[GHTimerProfiler] db file exists: %@",dbFilePath);
 #endif
         return;
     }
@@ -84,7 +83,7 @@
        ")"];
         [db executeUpdate:createTableSql];
 #ifdef GHTIMEPROFILER_LOG_ENABLE
-        NSLog(@"Create GHTimerProfiler db file-->%@",dbFilePath);
+        NSLog(@"[GHTimerProfiler] Create GHTimerProfiler db file: %@",dbFilePath);
 #endif
 
         [db close];
@@ -100,7 +99,7 @@
     }
 
 #if GHTIMEPROFILER_LOG_ENABLE
-    NSLog(@"%s failed!",__func__);
+    NSLog(@"[GHTimerProfiler] %s failed!",__func__);
 #endif
 }
 
@@ -198,7 +197,7 @@
 
 - (NSString *)dbFilePath
 {
-    return [NSTemporaryDirectory() stringByAppendingString:@"ghlog.sqlite"];
+    return [NSTemporaryDirectory() stringByAppendingString:@"gh_time_profiler_log.sqlite"];
 }
 
 @end

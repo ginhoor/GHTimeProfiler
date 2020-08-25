@@ -21,7 +21,6 @@
 
 @implementation GHTimeProfiler
 
-
 static id<GHTimeProfilerDelegate> _delegate;
 + (void)setDelegate:(id<GHTimeProfilerDelegate>)delegate
 {
@@ -30,31 +29,33 @@ static id<GHTimeProfilerDelegate> _delegate;
 
 + (void)start
 {
-    ghAnalyerStart();
+    [self startWithMaxDepth:0 minTimeCallCost:0];
 }
 
 + (void)startWithMaxDepth:(int)depth
 {
-    ghSetMaxCallDepth(depth);
-    ghAnalyerStart();
+    [self startWithMaxDepth:depth minTimeCallCost:0];
 }
 
 + (void)startWithMinTimeCallCost:(double)ms
 {
-    ghSetMinTimeCallCost(ms*1000);
-    ghAnalyerStart();
+    [self startWithMaxDepth:0 minTimeCallCost:ms];
 }
 
 + (void)startWithRecordAllThread
 {
     ghSetRecordMainThreadOnly(false);
-    ghAnalyerStart();
+    [self startWithMaxDepth:0 minTimeCallCost:0];
 }
 
 + (void)startWithMaxDepth:(int)depth minTimeCallCost:(double)ms
 {
-    ghSetMinTimeCallCost(ms*1000);
-    ghSetMaxCallDepth(depth);
+    if (ms > 0) {
+        ghSetMinTimeCallCost(ms*1000);
+    }
+    if (depth > 0) {
+        ghSetMaxCallDepth(depth);
+    }
     ghAnalyerStart();
 }
 
@@ -84,7 +85,7 @@ static id<GHTimeProfilerDelegate> _delegate;
     }];
     
 #if GHTIMEPROFILER_LOG_ENABLE
-    NSLog(@"GHTimeProfiler\n%@", mStr);
+    NSLog(@"[GHTimerProfiler] save %@", mStr);
 #endif
     
     if (_delegate && [_delegate respondsToSelector:@selector(timeProfilerDidSaved:formatString:)]) {
