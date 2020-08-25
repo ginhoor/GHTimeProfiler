@@ -1,0 +1,6 @@
+framework module GHTimeProfiler {
+  umbrella header "GHTimeProfiler-umbrella.h"
+
+  export *
+  module * { export * }
+}

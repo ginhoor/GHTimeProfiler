@@ -1,0 +1,13 @@
+use_frameworks!
+
+platform :ios, '8.0'
+
+target 'GHTimeProfiler_Example' do
+  pod 'GHTimeProfiler', :path => '../'
+
+  target 'GHTimeProfiler_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end

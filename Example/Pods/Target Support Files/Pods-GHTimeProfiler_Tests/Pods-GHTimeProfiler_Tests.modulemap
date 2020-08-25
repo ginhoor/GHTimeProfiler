@@ -1,0 +1,6 @@
+framework module Pods_GHTimeProfiler_Tests {
+  umbrella header "Pods-GHTimeProfiler_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}
