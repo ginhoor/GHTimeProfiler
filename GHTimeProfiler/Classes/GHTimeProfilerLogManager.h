@@ -7,8 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <FMDB.h>
-
+@import FMDB;
 @class GHTimeProfilerLog;
 
 NS_ASSUME_NONNULL_BEGIN
