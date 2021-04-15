@@ -10,6 +10,12 @@
 #endif
 #endif
 
+#import "fishhook.h"
+#import "GHObjcMsgSendHook.h"
+#import "GHTimeProfiler.h"
+#import "GHTimeProfilerHeader.h"
+#import "GHTimeProfilerLog.h"
+#import "GHTimeProfilerLogManager.h"
 
 FOUNDATION_EXPORT double GHTimeProfilerVersionNumber;
 FOUNDATION_EXPORT const unsigned char GHTimeProfilerVersionString[];

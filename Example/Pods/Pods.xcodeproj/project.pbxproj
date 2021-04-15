@@ -7,85 +7,163 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4818DD3C416210E64F08C7DCE3144FEF /* Pods-GHTimeProfiler_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 30C9456829E46E980B98B9D026955078 /* Pods-GHTimeProfiler_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4C42EE5868595C30161485442A18194F /* Pods-GHTimeProfiler_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D8283C858526FF63BDCB91B8D2AE89A /* Pods-GHTimeProfiler_Example-dummy.m */; };
-		5567ACB566BEBE497E69EE2383EA768A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
-		67A8217A3D912B8BBECBADE4A74EB69F /* GHTimeProfiler-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 56A9B1DF64EF61442E94F1DF5BD4930D /* GHTimeProfiler-dummy.m */; };
-		734976E8ED73E17A2043D831CB8EDD25 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
-		7B9B5C96D964FD63D64313DE0E2C9A4F /* GHTimeProfiler-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F28DC279E261F4FE1A95A79D63D642A /* GHTimeProfiler-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7F525510F5C72B95062628F39C49224F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		0370787809FDCBCB15C2D4DD22190732 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = B9ABAC87F0D8409475F68A59DD49201C /* FMDatabasePool.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		0C93E589E31C5CBCA37586544BEC1005 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = FC61B9D64EB918BF07B22972A918E87B /* FMDatabaseAdditions.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		0CA022FE5CC3F8A1ECC6699F10BF81EE /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = CD4D247B56F3C354FB04D528D1587258 /* FMDatabaseQueue.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		0D289827B5C29262627033F2679ACE79 /* GHTimeProfilerLog.m in Sources */ = {isa = PBXBuildFile; fileRef = F1F53636D42F5C1F320EF7BF07B0BF9F /* GHTimeProfilerLog.m */; };
+		0F72AA9F03EC61C6D857941E0B45811A /* FMDatabasePool.h in Headers */ = {isa = PBXBuildFile; fileRef = 4EE3034A916DED83058F7EE7876090C7 /* FMDatabasePool.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1B5C80A169A24762523D5A600734CEF6 /* GHObjcMsgSendHook.c in Sources */ = {isa = PBXBuildFile; fileRef = AE9020D9100DE93C4B5DEADFB74DC96F /* GHObjcMsgSendHook.c */; };
+		1C51C735DEF7F0BFBB7999969C0B82A7 /* GHTimeProfilerHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = 0B8E7AE3012FC09AA50B790A4B60AAA0 /* GHTimeProfilerHeader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		219BADA8C55CF72273F5A734AA0E0EF6 /* FMDB-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 54F5050F82A26CC1B35685AF74F29FC1 /* FMDB-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2D883319DC1BB46949A34AE2497EE4AB /* GHTimeProfiler-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C3294E97CDDFB152860FA4233E481D3B /* GHTimeProfiler-dummy.m */; };
+		2F7B022E1FCF0C46F79BA7EE9CCED567 /* Pods-GHTimeProfiler_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D8283C858526FF63BDCB91B8D2AE89A /* Pods-GHTimeProfiler_Example-dummy.m */; };
+		37296B38A55A40BEF65ECFC9B0527D8E /* FMDatabase.h in Headers */ = {isa = PBXBuildFile; fileRef = 5578B1407CA30A1C962B5BF1C25D303B /* FMDatabase.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3C63BE26F1E2E2A585DF4DC3981FB559 /* FMDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A94C2D4203484063B0C2B01EEA97692 /* FMDB.framework */; };
+		3E0ADC31171AC03B36B90F7CF821C789 /* fishhook.h in Headers */ = {isa = PBXBuildFile; fileRef = 4DE38FAEA2B1529D6EE819A996D4848A /* fishhook.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4732FC44746BDD34273D6481D0A35C66 /* GHTimeProfilerLogManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D7DDBE6D7CBB0684D2976E4C56C4DD19 /* GHTimeProfilerLogManager.m */; };
+		49F4FD7CFDC8FD6EB5FF9C363F6F1434 /* GHTimeProfilerLog.h in Headers */ = {isa = PBXBuildFile; fileRef = 273D6C49023355273CE00F7BC6BFFB33 /* GHTimeProfilerLog.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		50EEBBFEABB5AB5927C5A83D5F96DEB6 /* GHObjcMsgSendHook.h in Headers */ = {isa = PBXBuildFile; fileRef = DF671EE58E048DD8905CB17AA25F0546 /* GHObjcMsgSendHook.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		538F74CC22D0D13E9D79AC3ECC6DFFE7 /* FMDatabaseAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 5089FBB0BEE025338645FE5430ADDCAC /* FMDatabaseAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6C58288FB8A294C16676BF03E51AA34D /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = D7675B55C1BE46C7D3D375F223CE119D /* FMDatabase.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		6D4CBF92CDCBCE42EBCC1AD171543B9F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDDADFEACEDBB2F415EA13D48EDC2236 /* Foundation.framework */; };
+		7394E123FBD9832A5D6FD726D5D9470C /* FMDatabaseQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = D7735B8EBC221831E4D2A62D56D34CD4 /* FMDatabaseQueue.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7D4E0D91FE60904C9FB50F6D447B8A30 /* FMDB-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DFC7FCB163982668F35644CC9927F08C /* FMDB-dummy.m */; };
+		818A5EF3D209959E22B4E94449A8C8D2 /* GHTimeProfiler.m in Sources */ = {isa = PBXBuildFile; fileRef = 8159EF7CB38B49223822A6156D506F4A /* GHTimeProfiler.m */; };
+		83E8C224EFFB5E2098AEDEEBCB945AFD /* fishhook.c in Sources */ = {isa = PBXBuildFile; fileRef = 1C626F31EFD4F0E6A492CC5CABE2F79E /* fishhook.c */; };
 		8CE97DC34DF6F3DC6FBD04E95870DA84 /* Pods-GHTimeProfiler_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DDDCD477A461EFE043B9805778AE3C0C /* Pods-GHTimeProfiler_Tests-dummy.m */; };
+		99131CC84B5C40B7BC4417AB5523B30D /* GHTimeProfiler.h in Headers */ = {isa = PBXBuildFile; fileRef = C03F7BBA78782C6D8490C1E8ECF8A392 /* GHTimeProfiler.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A20D7907DF1429DF0AC1E5AEF30B49E5 /* Pods-GHTimeProfiler_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D821898A8C1D21EE3166E1238AE59A1E /* Pods-GHTimeProfiler_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C05800B47C836DEC2BA5E0AB9015679D /* ReplaceMe.m in Sources */ = {isa = PBXBuildFile; fileRef = 171A66C9070B02DCD465F62E6E631B10 /* ReplaceMe.m */; };
+		A92CDCFE2DC0D002DE1F208C2FEAB545 /* FMDB.h in Headers */ = {isa = PBXBuildFile; fileRef = 4983DC1580F5854B6A051CA7793E6937 /* FMDB.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AFDFC038316946EAD7F706A99EE9328F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDDADFEACEDBB2F415EA13D48EDC2236 /* Foundation.framework */; };
+		BB7ECF4DBE8D4BB38E6F2F08C326922A /* FMResultSet.h in Headers */ = {isa = PBXBuildFile; fileRef = D8F518F5CE26E4D5B0AF64A54ADA4187 /* FMResultSet.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BB86B059FB8629A2BBEAEEA670EAE580 /* GHTimeProfiler-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 85113E0409CA1C6F209EE5BD1F34399C /* GHTimeProfiler-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C99B4C7F563B89772609A4A88C2176C1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDDADFEACEDBB2F415EA13D48EDC2236 /* Foundation.framework */; };
+		D28639AA12F65CBDE9E9CA62510D6C23 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDDADFEACEDBB2F415EA13D48EDC2236 /* Foundation.framework */; };
+		DC53DEEC83FFA3A0E9A1B0C16DCF8EF8 /* GHTimeProfilerLogManager.h in Headers */ = {isa = PBXBuildFile; fileRef = F08AA1A9CD3BE22D96A7EE6B2DDC57CF /* GHTimeProfilerLogManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EC9E8CF8EA0EF06463B6138815E99F83 /* Pods-GHTimeProfiler_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 30C9456829E46E980B98B9D026955078 /* Pods-GHTimeProfiler_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FDD8729FB9BBE45B90107CA26BE5804B /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 1624A2329DA3B81C85654CF04AFAE6DE /* FMResultSet.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		6756A9CDD6829318830A07ECA83AA7E8 /* PBXContainerItemProxy */ = {
+		7E0AE08C6E665903344EF75509408C5D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = EB5A1C65D5B9FD3233F8F817592B87B9;
 			remoteInfo = GHTimeProfiler;
 		};
-		DA6B0DA6D050EB61E2DD1CD1FC11C4A3 /* PBXContainerItemProxy */ = {
+		8059539244AB27BAC95FD377CC73A381 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 98DEA3B587019AB7D4FE371F0979E016;
 			remoteInfo = "Pods-GHTimeProfiler_Example";
 		};
+		9ECBCA8F2DA5DD88E2D28A1B2CEF7B39 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8592E0E389D40AC17881400ADC67ABC0;
+			remoteInfo = FMDB;
+		};
+		D201F788122D5C37773C94DA90A19389 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8592E0E389D40AC17881400ADC67ABC0;
+			remoteInfo = FMDB;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		010E5DA72902275E12265A6647DC59BF /* Pods-GHTimeProfiler_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GHTimeProfiler_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		0758F6D1A84F02FCC1FF0BAAE6535194 /* Pods-GHTimeProfiler_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-GHTimeProfiler_Example.modulemap"; sourceTree = "<group>"; };
+		0B8E7AE3012FC09AA50B790A4B60AAA0 /* GHTimeProfilerHeader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GHTimeProfilerHeader.h; path = GHTimeProfiler/Classes/GHTimeProfilerHeader.h; sourceTree = "<group>"; };
 		0CBDA2F0C69641710123DDB282ACCA53 /* Pods-GHTimeProfiler_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-GHTimeProfiler_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
-		171A66C9070B02DCD465F62E6E631B10 /* ReplaceMe.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ReplaceMe.m; path = GHTimeProfiler/Classes/ReplaceMe.m; sourceTree = "<group>"; };
+		156E36C7292CE3F7FB7429C8BC43974A /* FMDB-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "FMDB-Info.plist"; sourceTree = "<group>"; };
+		1624A2329DA3B81C85654CF04AFAE6DE /* FMResultSet.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FMResultSet.m; path = src/fmdb/FMResultSet.m; sourceTree = "<group>"; };
+		1C626F31EFD4F0E6A492CC5CABE2F79E /* fishhook.c */ = {isa = PBXFileReference; includeInIndex = 1; path = fishhook.c; sourceTree = "<group>"; };
+		1D5889FC7A533994775A6214F9A218F1 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		273D6C49023355273CE00F7BC6BFFB33 /* GHTimeProfilerLog.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GHTimeProfilerLog.h; path = GHTimeProfiler/Classes/GHTimeProfilerLog.h; sourceTree = "<group>"; };
+		2A94C2D4203484063B0C2B01EEA97692 /* FMDB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FMDB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2B491402D140EE9A8EA28415AF94F7EA /* GHTimeProfiler-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GHTimeProfiler-prefix.pch"; sourceTree = "<group>"; };
 		30C9456829E46E980B98B9D026955078 /* Pods-GHTimeProfiler_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-GHTimeProfiler_Example-umbrella.h"; sourceTree = "<group>"; };
-		3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		35A57284604A1DF6F19839A70B50E896 /* GHTimeProfiler.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GHTimeProfiler.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		35A57284604A1DF6F19839A70B50E896 /* GHTimeProfiler.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = GHTimeProfiler.framework; path = GHTimeProfiler.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B63EC90FC20DFB83FB8F957038F93EE /* Pods-GHTimeProfiler_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-GHTimeProfiler_Tests.modulemap"; sourceTree = "<group>"; };
+		3FE1CA63C87DCD57F8E4937052E57E6A /* GHTimeProfiler.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GHTimeProfiler.release.xcconfig; sourceTree = "<group>"; };
+		4983DC1580F5854B6A051CA7793E6937 /* FMDB.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FMDB.h; path = src/fmdb/FMDB.h; sourceTree = "<group>"; };
+		4AD083D0DAD5612F827A73AA70405204 /* FMDB.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FMDB.release.xcconfig; sourceTree = "<group>"; };
+		4DE38FAEA2B1529D6EE819A996D4848A /* fishhook.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = fishhook.h; sourceTree = "<group>"; };
+		4EE3034A916DED83058F7EE7876090C7 /* FMDatabasePool.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FMDatabasePool.h; path = src/fmdb/FMDatabasePool.h; sourceTree = "<group>"; };
+		5089FBB0BEE025338645FE5430ADDCAC /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FMDatabaseAdditions.h; path = src/fmdb/FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		50B4DB0ACFB47EC2530140C1504CD1F3 /* GHTimeProfiler.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = GHTimeProfiler.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		527DB1175F87EEC985039DB65192E418 /* GHTimeProfiler.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GHTimeProfiler.debug.xcconfig; sourceTree = "<group>"; };
 		544F505DE913BD50A39C88AA40DC6C40 /* Pods-GHTimeProfiler_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-GHTimeProfiler_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		54F5050F82A26CC1B35685AF74F29FC1 /* FMDB-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FMDB-umbrella.h"; sourceTree = "<group>"; };
 		556C13B19925F80B916D4DAEBC98FA26 /* Pods-GHTimeProfiler_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GHTimeProfiler_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		562B405E6F7691E63F9769CF4BD19E49 /* GHTimeProfiler.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GHTimeProfiler.release.xcconfig; sourceTree = "<group>"; };
-		56A9B1DF64EF61442E94F1DF5BD4930D /* GHTimeProfiler-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "GHTimeProfiler-dummy.m"; sourceTree = "<group>"; };
+		5578B1407CA30A1C962B5BF1C25D303B /* FMDatabase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FMDatabase.h; path = src/fmdb/FMDatabase.h; sourceTree = "<group>"; };
 		5D8283C858526FF63BDCB91B8D2AE89A /* Pods-GHTimeProfiler_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-GHTimeProfiler_Example-dummy.m"; sourceTree = "<group>"; };
+		6E255EE01D81C11EEA086844DF9F6876 /* GHTimeProfiler.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = GHTimeProfiler.modulemap; sourceTree = "<group>"; };
 		744036B794A17C1B7048C7337F04EC5D /* Pods-GHTimeProfiler_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GHTimeProfiler_Example.release.xcconfig"; sourceTree = "<group>"; };
-		7F28DC279E261F4FE1A95A79D63D642A /* GHTimeProfiler-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GHTimeProfiler-umbrella.h"; sourceTree = "<group>"; };
-		82E67A420394B9E4581EF0095D1B8B72 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		74BD0205B5E3CBC07E63EF7B8E68F919 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		8159EF7CB38B49223822A6156D506F4A /* GHTimeProfiler.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GHTimeProfiler.m; path = GHTimeProfiler/Classes/GHTimeProfiler.m; sourceTree = "<group>"; };
 		84999EFA1FF7D36F1BA2F3E59F7CB55B /* Pods-GHTimeProfiler_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GHTimeProfiler_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		909AF58D3027CFD4012BF371B74AEB11 /* GHTimeProfiler.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GHTimeProfiler.debug.xcconfig; sourceTree = "<group>"; };
+		85113E0409CA1C6F209EE5BD1F34399C /* GHTimeProfiler-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GHTimeProfiler-umbrella.h"; sourceTree = "<group>"; };
+		9213A593489A249968EC9A931510A4A9 /* FMDB.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = FMDB.modulemap; sourceTree = "<group>"; };
 		97F8B7AE1AD9A41C12A5510DE15470E7 /* Pods-GHTimeProfiler_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-GHTimeProfiler_Tests-Info.plist"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		A18EF39F80830D4577915699B9AB14D9 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		A340991154548F8DA4C744EC71F61BEE /* GHTimeProfiler.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = GHTimeProfiler.modulemap; sourceTree = "<group>"; };
-		A9D1155EC89D1C9582B19845F23FAB55 /* Pods_GHTimeProfiler_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GHTimeProfiler_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B1F354B61844130A330182B9021054F3 /* GHTimeProfiler-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GHTimeProfiler-prefix.pch"; sourceTree = "<group>"; };
-		B90681248E62A4148ED788FAFBB32EE4 /* GHTimeProfiler.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = GHTimeProfiler.podspec; sourceTree = "<group>"; tabWidth = 2; };
-		C1A27AF1317D33D6164161D9FB27EFF2 /* GHTimeProfiler-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "GHTimeProfiler-Info.plist"; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A3A80BA70CFB7F75C5391BEBBBA8C9DA /* FMDB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = FMDB.framework; path = FMDB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A9D1155EC89D1C9582B19845F23FAB55 /* Pods_GHTimeProfiler_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_GHTimeProfiler_Tests.framework; path = "Pods-GHTimeProfiler_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE9020D9100DE93C4B5DEADFB74DC96F /* GHObjcMsgSendHook.c */ = {isa = PBXFileReference; includeInIndex = 1; name = GHObjcMsgSendHook.c; path = GHTimeProfiler/Classes/GHObjcMsgSendHook.c; sourceTree = "<group>"; };
+		B9ABAC87F0D8409475F68A59DD49201C /* FMDatabasePool.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FMDatabasePool.m; path = src/fmdb/FMDatabasePool.m; sourceTree = "<group>"; };
+		C03F7BBA78782C6D8490C1E8ECF8A392 /* GHTimeProfiler.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GHTimeProfiler.h; path = GHTimeProfiler/Classes/GHTimeProfiler.h; sourceTree = "<group>"; };
+		C3294E97CDDFB152860FA4233E481D3B /* GHTimeProfiler-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "GHTimeProfiler-dummy.m"; sourceTree = "<group>"; };
+		CD4D247B56F3C354FB04D528D1587258 /* FMDatabaseQueue.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FMDatabaseQueue.m; path = src/fmdb/FMDatabaseQueue.m; sourceTree = "<group>"; };
+		CDDADFEACEDBB2F415EA13D48EDC2236 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		D7675B55C1BE46C7D3D375F223CE119D /* FMDatabase.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FMDatabase.m; path = src/fmdb/FMDatabase.m; sourceTree = "<group>"; };
+		D7735B8EBC221831E4D2A62D56D34CD4 /* FMDatabaseQueue.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FMDatabaseQueue.h; path = src/fmdb/FMDatabaseQueue.h; sourceTree = "<group>"; };
+		D7DDBE6D7CBB0684D2976E4C56C4DD19 /* GHTimeProfilerLogManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GHTimeProfilerLogManager.m; path = GHTimeProfiler/Classes/GHTimeProfilerLogManager.m; sourceTree = "<group>"; };
 		D821898A8C1D21EE3166E1238AE59A1E /* Pods-GHTimeProfiler_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-GHTimeProfiler_Tests-umbrella.h"; sourceTree = "<group>"; };
+		D8F518F5CE26E4D5B0AF64A54ADA4187 /* FMResultSet.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FMResultSet.h; path = src/fmdb/FMResultSet.h; sourceTree = "<group>"; };
+		D9987081821A9B33A2FB045AF7E17515 /* GHTimeProfiler-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "GHTimeProfiler-Info.plist"; sourceTree = "<group>"; };
+		DDB84D9A0F15E735FC534A12711BC72D /* FMDB-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FMDB-prefix.pch"; sourceTree = "<group>"; };
 		DDDCD477A461EFE043B9805778AE3C0C /* Pods-GHTimeProfiler_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-GHTimeProfiler_Tests-dummy.m"; sourceTree = "<group>"; };
+		DF671EE58E048DD8905CB17AA25F0546 /* GHObjcMsgSendHook.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GHObjcMsgSendHook.h; path = GHTimeProfiler/Classes/GHObjcMsgSendHook.h; sourceTree = "<group>"; };
+		DFC7FCB163982668F35644CC9927F08C /* FMDB-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "FMDB-dummy.m"; sourceTree = "<group>"; };
 		EB10E46D16599B000F580879F10C4B5E /* Pods-GHTimeProfiler_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-GHTimeProfiler_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		EB691AE6AFC39B89EEF9E0B58FE0B086 /* Pods-GHTimeProfiler_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-GHTimeProfiler_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		ECA803C74EEF65B94257A68FC5DAB6F3 /* Pods-GHTimeProfiler_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-GHTimeProfiler_Example-Info.plist"; sourceTree = "<group>"; };
 		EF8D14F6C64B355A905C62BC4F950593 /* Pods-GHTimeProfiler_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-GHTimeProfiler_Example-frameworks.sh"; sourceTree = "<group>"; };
-		F2E1E43DF6A1DD2D26EF2007819FFBCB /* Pods_GHTimeProfiler_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GHTimeProfiler_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F08AA1A9CD3BE22D96A7EE6B2DDC57CF /* GHTimeProfilerLogManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GHTimeProfilerLogManager.h; path = GHTimeProfiler/Classes/GHTimeProfilerLogManager.h; sourceTree = "<group>"; };
+		F1F53636D42F5C1F320EF7BF07B0BF9F /* GHTimeProfilerLog.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GHTimeProfilerLog.m; path = GHTimeProfiler/Classes/GHTimeProfilerLog.m; sourceTree = "<group>"; };
+		F2E1E43DF6A1DD2D26EF2007819FFBCB /* Pods_GHTimeProfiler_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_GHTimeProfiler_Example.framework; path = "Pods-GHTimeProfiler_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC61B9D64EB918BF07B22972A918E87B /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FMDatabaseAdditions.m; path = src/fmdb/FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		FD36278E2433C2F3A0E6A23B97373671 /* FMDB.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FMDB.debug.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		382755A4704B77343FE96C5062A760ED /* Frameworks */ = {
+		18702ADEA75259552543117C75067F96 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				734976E8ED73E17A2043D831CB8EDD25 /* Foundation.framework in Frameworks */,
+				3C63BE26F1E2E2A585DF4DC3981FB559 /* FMDB.framework in Frameworks */,
+				C99B4C7F563B89772609A4A88C2176C1 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		954C07461CA372830226E16CCAEA3547 /* Frameworks */ = {
+		41E857D338F96D89E73F6E28241F0A8B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7F525510F5C72B95062628F39C49224F /* Foundation.framework in Frameworks */,
+				6D4CBF92CDCBCE42EBCC1AD171543B9F /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		94D2665241A5B5CB3F66BF5B78882625 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D28639AA12F65CBDE9E9CA62510D6C23 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,13 +171,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5567ACB566BEBE497E69EE2383EA768A /* Foundation.framework in Frameworks */,
+				AFDFC038316946EAD7F706A99EE9328F /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		092290BB72D688D748DE51E697EF4425 /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				ACC7C1D63FDBEBBDFBAD4D98B4DD577D /* GHTimeProfiler */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
 		17CB6C4B66FEE0E7B356F906832ED9DA /* Pods-GHTimeProfiler_Tests */ = {
 			isa = PBXGroup;
 			children = (
@@ -116,14 +202,12 @@
 			path = "Target Support Files/Pods-GHTimeProfiler_Tests";
 			sourceTree = "<group>";
 		};
-		341A2C97CCE3AB648BA286F175B1DCD4 /* Pod */ = {
+		250D9D5E51DAFB13A4F5CF7E5E21E5B7 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				B90681248E62A4148ED788FAFBB32EE4 /* GHTimeProfiler.podspec */,
-				A18EF39F80830D4577915699B9AB14D9 /* LICENSE */,
-				82E67A420394B9E4581EF0095D1B8B72 /* README.md */,
+				CDDADFEACEDBB2F415EA13D48EDC2236 /* Foundation.framework */,
 			);
-			name = Pod;
+			name = iOS;
 			sourceTree = "<group>";
 		};
 		61408D69AD2AAC2909BD04B96477E160 /* Targets Support Files */ = {
@@ -135,24 +219,55 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		944321D0ABBB9D3B85C1AD6FC1F321D5 /* Development Pods */ = {
+		68DB21AE5492FC581291330CF6E902BA /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				C43BBEBE33F23D2756377163F079F21E /* GHTimeProfiler */,
+				CE722919203F5B19F3131936952CB279 /* FMDB */,
 			);
-			name = "Development Pods";
+			name = Pods;
 			sourceTree = "<group>";
 		};
-		9E30C273D06692AFBF49001B570DE879 /* Support Files */ = {
+		721FBB75D188808F34DDF57A8C08703A /* fishhook */ = {
 			isa = PBXGroup;
 			children = (
-				A340991154548F8DA4C744EC71F61BEE /* GHTimeProfiler.modulemap */,
-				56A9B1DF64EF61442E94F1DF5BD4930D /* GHTimeProfiler-dummy.m */,
-				C1A27AF1317D33D6164161D9FB27EFF2 /* GHTimeProfiler-Info.plist */,
-				B1F354B61844130A330182B9021054F3 /* GHTimeProfiler-prefix.pch */,
-				7F28DC279E261F4FE1A95A79D63D642A /* GHTimeProfiler-umbrella.h */,
-				909AF58D3027CFD4012BF371B74AEB11 /* GHTimeProfiler.debug.xcconfig */,
-				562B405E6F7691E63F9769CF4BD19E49 /* GHTimeProfiler.release.xcconfig */,
+				1C626F31EFD4F0E6A492CC5CABE2F79E /* fishhook.c */,
+				4DE38FAEA2B1529D6EE819A996D4848A /* fishhook.h */,
+			);
+			name = fishhook;
+			path = GHTimeProfiler/Classes/fishhook;
+			sourceTree = "<group>";
+		};
+		757C5E227D88961A3575FF4AAB30F301 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				50B4DB0ACFB47EC2530140C1504CD1F3 /* GHTimeProfiler.podspec */,
+				74BD0205B5E3CBC07E63EF7B8E68F919 /* LICENSE */,
+				1D5889FC7A533994775A6214F9A218F1 /* README.md */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
+		7F4EFB12A21D031772E9443FDC5240AD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A3A80BA70CFB7F75C5391BEBBBA8C9DA /* FMDB.framework */,
+				35A57284604A1DF6F19839A70B50E896 /* GHTimeProfiler.framework */,
+				F2E1E43DF6A1DD2D26EF2007819FFBCB /* Pods_GHTimeProfiler_Example.framework */,
+				A9D1155EC89D1C9582B19845F23FAB55 /* Pods_GHTimeProfiler_Tests.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		980E2BB9F5E1ACE34317EB542233C8AE /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				6E255EE01D81C11EEA086844DF9F6876 /* GHTimeProfiler.modulemap */,
+				C3294E97CDDFB152860FA4233E481D3B /* GHTimeProfiler-dummy.m */,
+				D9987081821A9B33A2FB045AF7E17515 /* GHTimeProfiler-Info.plist */,
+				2B491402D140EE9A8EA28415AF94F7EA /* GHTimeProfiler-prefix.pch */,
+				85113E0409CA1C6F209EE5BD1F34399C /* GHTimeProfiler-umbrella.h */,
+				527DB1175F87EEC985039DB65192E418 /* GHTimeProfiler.debug.xcconfig */,
+				3FE1CA63C87DCD57F8E4937052E57E6A /* GHTimeProfiler.release.xcconfig */,
 			);
 			name = "Support Files";
 			path = "Example/Pods/Target Support Files/GHTimeProfiler";
@@ -175,52 +290,88 @@
 			path = "Target Support Files/Pods-GHTimeProfiler_Example";
 			sourceTree = "<group>";
 		};
-		BC9BC4C49F71603F79220946DFA5A540 /* Products */ = {
+		ACC7C1D63FDBEBBDFBAD4D98B4DD577D /* GHTimeProfiler */ = {
 			isa = PBXGroup;
 			children = (
-				35A57284604A1DF6F19839A70B50E896 /* GHTimeProfiler.framework */,
-				F2E1E43DF6A1DD2D26EF2007819FFBCB /* Pods_GHTimeProfiler_Example.framework */,
-				A9D1155EC89D1C9582B19845F23FAB55 /* Pods_GHTimeProfiler_Tests.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		C0834CEBB1379A84116EF29F93051C60 /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */,
-			);
-			name = iOS;
-			sourceTree = "<group>";
-		};
-		C43BBEBE33F23D2756377163F079F21E /* GHTimeProfiler */ = {
-			isa = PBXGroup;
-			children = (
-				171A66C9070B02DCD465F62E6E631B10 /* ReplaceMe.m */,
-				341A2C97CCE3AB648BA286F175B1DCD4 /* Pod */,
-				9E30C273D06692AFBF49001B570DE879 /* Support Files */,
+				AE9020D9100DE93C4B5DEADFB74DC96F /* GHObjcMsgSendHook.c */,
+				DF671EE58E048DD8905CB17AA25F0546 /* GHObjcMsgSendHook.h */,
+				C03F7BBA78782C6D8490C1E8ECF8A392 /* GHTimeProfiler.h */,
+				8159EF7CB38B49223822A6156D506F4A /* GHTimeProfiler.m */,
+				0B8E7AE3012FC09AA50B790A4B60AAA0 /* GHTimeProfilerHeader.h */,
+				273D6C49023355273CE00F7BC6BFFB33 /* GHTimeProfilerLog.h */,
+				F1F53636D42F5C1F320EF7BF07B0BF9F /* GHTimeProfilerLog.m */,
+				F08AA1A9CD3BE22D96A7EE6B2DDC57CF /* GHTimeProfilerLogManager.h */,
+				D7DDBE6D7CBB0684D2976E4C56C4DD19 /* GHTimeProfilerLogManager.m */,
+				721FBB75D188808F34DDF57A8C08703A /* fishhook */,
+				757C5E227D88961A3575FF4AAB30F301 /* Pod */,
+				980E2BB9F5E1ACE34317EB542233C8AE /* Support Files */,
 			);
 			name = GHTimeProfiler;
 			path = ../..;
+			sourceTree = "<group>";
+		};
+		C38E43CAC46D8E3321714F4C03010F12 /* standard */ = {
+			isa = PBXGroup;
+			children = (
+				5578B1407CA30A1C962B5BF1C25D303B /* FMDatabase.h */,
+				D7675B55C1BE46C7D3D375F223CE119D /* FMDatabase.m */,
+				5089FBB0BEE025338645FE5430ADDCAC /* FMDatabaseAdditions.h */,
+				FC61B9D64EB918BF07B22972A918E87B /* FMDatabaseAdditions.m */,
+				4EE3034A916DED83058F7EE7876090C7 /* FMDatabasePool.h */,
+				B9ABAC87F0D8409475F68A59DD49201C /* FMDatabasePool.m */,
+				D7735B8EBC221831E4D2A62D56D34CD4 /* FMDatabaseQueue.h */,
+				CD4D247B56F3C354FB04D528D1587258 /* FMDatabaseQueue.m */,
+				4983DC1580F5854B6A051CA7793E6937 /* FMDB.h */,
+				D8F518F5CE26E4D5B0AF64A54ADA4187 /* FMResultSet.h */,
+				1624A2329DA3B81C85654CF04AFAE6DE /* FMResultSet.m */,
+			);
+			name = standard;
+			sourceTree = "<group>";
+		};
+		CE722919203F5B19F3131936952CB279 /* FMDB */ = {
+			isa = PBXGroup;
+			children = (
+				C38E43CAC46D8E3321714F4C03010F12 /* standard */,
+				E3867D25A716FDC715F0CFF88B8D550F /* Support Files */,
+			);
+			name = FMDB;
+			path = FMDB;
 			sourceTree = "<group>";
 		};
 		CF1408CF629C7361332E53B88F7BD30C = {
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
-				944321D0ABBB9D3B85C1AD6FC1F321D5 /* Development Pods */,
-				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
-				BC9BC4C49F71603F79220946DFA5A540 /* Products */,
+				092290BB72D688D748DE51E697EF4425 /* Development Pods */,
+				CF49E37C9722649D8E0EED9C6C0C349D /* Frameworks */,
+				68DB21AE5492FC581291330CF6E902BA /* Pods */,
+				7F4EFB12A21D031772E9443FDC5240AD /* Products */,
 				61408D69AD2AAC2909BD04B96477E160 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
+		CF49E37C9722649D8E0EED9C6C0C349D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				C0834CEBB1379A84116EF29F93051C60 /* iOS */,
+				2A94C2D4203484063B0C2B01EEA97692 /* FMDB.framework */,
+				250D9D5E51DAFB13A4F5CF7E5E21E5B7 /* iOS */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E3867D25A716FDC715F0CFF88B8D550F /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				9213A593489A249968EC9A931510A4A9 /* FMDB.modulemap */,
+				DFC7FCB163982668F35644CC9927F08C /* FMDB-dummy.m */,
+				156E36C7292CE3F7FB7429C8BC43974A /* FMDB-Info.plist */,
+				DDB84D9A0F15E735FC534A12711BC72D /* FMDB-prefix.pch */,
+				54F5050F82A26CC1B35685AF74F29FC1 /* FMDB-umbrella.h */,
+				FD36278E2433C2F3A0E6A23B97373671 /* FMDB.debug.xcconfig */,
+				4AD083D0DAD5612F827A73AA70405204 /* FMDB.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/FMDB";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,38 +385,77 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		51FA3670590B5CB7BB6D84E0AE550750 /* Headers */ = {
+		DCCC73753CB120F68D482DBCD2F11BB6 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4818DD3C416210E64F08C7DCE3144FEF /* Pods-GHTimeProfiler_Example-umbrella.h in Headers */,
+				37296B38A55A40BEF65ECFC9B0527D8E /* FMDatabase.h in Headers */,
+				538F74CC22D0D13E9D79AC3ECC6DFFE7 /* FMDatabaseAdditions.h in Headers */,
+				0F72AA9F03EC61C6D857941E0B45811A /* FMDatabasePool.h in Headers */,
+				7394E123FBD9832A5D6FD726D5D9470C /* FMDatabaseQueue.h in Headers */,
+				219BADA8C55CF72273F5A734AA0E0EF6 /* FMDB-umbrella.h in Headers */,
+				A92CDCFE2DC0D002DE1F208C2FEAB545 /* FMDB.h in Headers */,
+				BB7ECF4DBE8D4BB38E6F2F08C326922A /* FMResultSet.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5E9F9F3C7264131BD471CA2E46222FDA /* Headers */ = {
+		F59DA21F154FF2CDCA969093AD3CE71F /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7B9B5C96D964FD63D64313DE0E2C9A4F /* GHTimeProfiler-umbrella.h in Headers */,
+				EC9E8CF8EA0EF06463B6138815E99F83 /* Pods-GHTimeProfiler_Example-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FD5BEE73FFB00866292CDFEA63034784 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3E0ADC31171AC03B36B90F7CF821C789 /* fishhook.h in Headers */,
+				50EEBBFEABB5AB5927C5A83D5F96DEB6 /* GHObjcMsgSendHook.h in Headers */,
+				BB86B059FB8629A2BBEAEEA670EAE580 /* GHTimeProfiler-umbrella.h in Headers */,
+				99131CC84B5C40B7BC4417AB5523B30D /* GHTimeProfiler.h in Headers */,
+				1C51C735DEF7F0BFBB7999969C0B82A7 /* GHTimeProfilerHeader.h in Headers */,
+				49F4FD7CFDC8FD6EB5FF9C363F6F1434 /* GHTimeProfilerLog.h in Headers */,
+				DC53DEEC83FFA3A0E9A1B0C16DCF8EF8 /* GHTimeProfilerLogManager.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		98DEA3B587019AB7D4FE371F0979E016 /* Pods-GHTimeProfiler_Example */ = {
+		8592E0E389D40AC17881400ADC67ABC0 /* FMDB */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C19693E929DD9B329D709FD4D0433B13 /* Build configuration list for PBXNativeTarget "Pods-GHTimeProfiler_Example" */;
+			buildConfigurationList = EE1CF8B84020151C94CD4280C9C11ED5 /* Build configuration list for PBXNativeTarget "FMDB" */;
 			buildPhases = (
-				51FA3670590B5CB7BB6D84E0AE550750 /* Headers */,
-				7B3AC573B3A992FCE6D71870D10DCCF7 /* Sources */,
-				382755A4704B77343FE96C5062A760ED /* Frameworks */,
-				C415FEC22575AAAF28E3B1C91D610426 /* Resources */,
+				DCCC73753CB120F68D482DBCD2F11BB6 /* Headers */,
+				7E0D56167C29831E3033100E4A70F3B9 /* Sources */,
+				41E857D338F96D89E73F6E28241F0A8B /* Frameworks */,
+				2B6B314F2508F3A29CC15F9D75CB5E33 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				30544A15C432E763DE83C827E0E465BC /* PBXTargetDependency */,
+			);
+			name = FMDB;
+			productName = FMDB;
+			productReference = A3A80BA70CFB7F75C5391BEBBBA8C9DA /* FMDB.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		98DEA3B587019AB7D4FE371F0979E016 /* Pods-GHTimeProfiler_Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C1399A7446ACF6B2FCF807D5F58F10D6 /* Build configuration list for PBXNativeTarget "Pods-GHTimeProfiler_Example" */;
+			buildPhases = (
+				F59DA21F154FF2CDCA969093AD3CE71F /* Headers */,
+				BCC43C8FCD936AB1205D51C64CFBE772 /* Sources */,
+				94D2665241A5B5CB3F66BF5B78882625 /* Frameworks */,
+				2E3F2933481DE6761F381111211CE4DE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FB8BE927928E2FACD1EE79E809F4760A /* PBXTargetDependency */,
+				30A072FBC3F1A7F0230BF824270005E1 /* PBXTargetDependency */,
 			);
 			name = "Pods-GHTimeProfiler_Example";
 			productName = "Pods-GHTimeProfiler_Example";
@@ -284,7 +474,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				348912169A92C6D47A7A00DC59639484 /* PBXTargetDependency */,
+				CE2074F3A26EFDD4DB1DC22DF225ADC6 /* PBXTargetDependency */,
 			);
 			name = "Pods-GHTimeProfiler_Tests";
 			productName = "Pods-GHTimeProfiler_Tests";
@@ -293,16 +483,17 @@
 		};
 		EB5A1C65D5B9FD3233F8F817592B87B9 /* GHTimeProfiler */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A0226E8203DE3DDDAFFE550CB02A0C63 /* Build configuration list for PBXNativeTarget "GHTimeProfiler" */;
+			buildConfigurationList = 50F52D370EE9AFEC7866FFE3E503CC08 /* Build configuration list for PBXNativeTarget "GHTimeProfiler" */;
 			buildPhases = (
-				5E9F9F3C7264131BD471CA2E46222FDA /* Headers */,
-				8E43A570FEBBFCDB9A839FB8F5A073E3 /* Sources */,
-				954C07461CA372830226E16CCAEA3547 /* Frameworks */,
-				F0AE20E9CDA896FEDA4FA61D21F55BE6 /* Resources */,
+				FD5BEE73FFB00866292CDFEA63034784 /* Headers */,
+				96D98089EE9D2D472D14427FC73B68BC /* Sources */,
+				18702ADEA75259552543117C75067F96 /* Frameworks */,
+				5C3462BEA82CD8CD4444580108C92C79 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				94E23F8975264C65731A59C27472B4BE /* PBXTargetDependency */,
 			);
 			name = GHTimeProfiler;
 			productName = GHTimeProfiler;
@@ -327,10 +518,11 @@
 				Base,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = BC9BC4C49F71603F79220946DFA5A540 /* Products */;
+			productRefGroup = 7F4EFB12A21D031772E9443FDC5240AD /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
+				8592E0E389D40AC17881400ADC67ABC0 /* FMDB */,
 				EB5A1C65D5B9FD3233F8F817592B87B9 /* GHTimeProfiler */,
 				98DEA3B587019AB7D4FE371F0979E016 /* Pods-GHTimeProfiler_Example */,
 				999D28A1319FD832C017F2FE7748ED41 /* Pods-GHTimeProfiler_Tests */,
@@ -339,21 +531,28 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		2B6B314F2508F3A29CC15F9D75CB5E33 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2E3F2933481DE6761F381111211CE4DE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5C3462BEA82CD8CD4444580108C92C79 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8D46F2BD69B1027A72C5CE582BF44F4C /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		C415FEC22575AAAF28E3B1C91D610426 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F0AE20E9CDA896FEDA4FA61D21F55BE6 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -363,20 +562,29 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		7B3AC573B3A992FCE6D71870D10DCCF7 /* Sources */ = {
+		7E0D56167C29831E3033100E4A70F3B9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4C42EE5868595C30161485442A18194F /* Pods-GHTimeProfiler_Example-dummy.m in Sources */,
+				6C58288FB8A294C16676BF03E51AA34D /* FMDatabase.m in Sources */,
+				0C93E589E31C5CBCA37586544BEC1005 /* FMDatabaseAdditions.m in Sources */,
+				0370787809FDCBCB15C2D4DD22190732 /* FMDatabasePool.m in Sources */,
+				0CA022FE5CC3F8A1ECC6699F10BF81EE /* FMDatabaseQueue.m in Sources */,
+				7D4E0D91FE60904C9FB50F6D447B8A30 /* FMDB-dummy.m in Sources */,
+				FDD8729FB9BBE45B90107CA26BE5804B /* FMResultSet.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8E43A570FEBBFCDB9A839FB8F5A073E3 /* Sources */ = {
+		96D98089EE9D2D472D14427FC73B68BC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				67A8217A3D912B8BBECBADE4A74EB69F /* GHTimeProfiler-dummy.m in Sources */,
-				C05800B47C836DEC2BA5E0AB9015679D /* ReplaceMe.m in Sources */,
+				83E8C224EFFB5E2098AEDEEBCB945AFD /* fishhook.c in Sources */,
+				1B5C80A169A24762523D5A600734CEF6 /* GHObjcMsgSendHook.c in Sources */,
+				2D883319DC1BB46949A34AE2497EE4AB /* GHTimeProfiler-dummy.m in Sources */,
+				818A5EF3D209959E22B4E94449A8C8D2 /* GHTimeProfiler.m in Sources */,
+				0D289827B5C29262627033F2679ACE79 /* GHTimeProfilerLog.m in Sources */,
+				4732FC44746BDD34273D6481D0A35C66 /* GHTimeProfilerLogManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -388,30 +596,49 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		BCC43C8FCD936AB1205D51C64CFBE772 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2F7B022E1FCF0C46F79BA7EE9CCED567 /* Pods-GHTimeProfiler_Example-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		30544A15C432E763DE83C827E0E465BC /* PBXTargetDependency */ = {
+		30A072FBC3F1A7F0230BF824270005E1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = GHTimeProfiler;
 			target = EB5A1C65D5B9FD3233F8F817592B87B9 /* GHTimeProfiler */;
-			targetProxy = 6756A9CDD6829318830A07ECA83AA7E8 /* PBXContainerItemProxy */;
+			targetProxy = 7E0AE08C6E665903344EF75509408C5D /* PBXContainerItemProxy */;
 		};
-		348912169A92C6D47A7A00DC59639484 /* PBXTargetDependency */ = {
+		94E23F8975264C65731A59C27472B4BE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = FMDB;
+			target = 8592E0E389D40AC17881400ADC67ABC0 /* FMDB */;
+			targetProxy = D201F788122D5C37773C94DA90A19389 /* PBXContainerItemProxy */;
+		};
+		CE2074F3A26EFDD4DB1DC22DF225ADC6 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-GHTimeProfiler_Example";
 			target = 98DEA3B587019AB7D4FE371F0979E016 /* Pods-GHTimeProfiler_Example */;
-			targetProxy = DA6B0DA6D050EB61E2DD1CD1FC11C4A3 /* PBXContainerItemProxy */;
+			targetProxy = 8059539244AB27BAC95FD377CC73A381 /* PBXContainerItemProxy */;
+		};
+		FB8BE927928E2FACD1EE79E809F4760A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = FMDB;
+			target = 8592E0E389D40AC17881400ADC67ABC0 /* FMDB */;
+			targetProxy = 9ECBCA8F2DA5DD88E2D28A1B2CEF7B39 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		2AF016EAF28B1136209FA0ACE4440B21 /* Release */ = {
+		1E699F2F510C61A8FBA61137DCB3166F /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 744036B794A17C1B7048C7337F04EC5D /* Pods-GHTimeProfiler_Example.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -440,10 +667,104 @@
 			};
 			name = Release;
 		};
-		4BE66A09A74FD25164AAB3C2645B9B93 /* Release */ = {
+		3FA9605C6B67FAD3E695EECF4CEF13BB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FD36278E2433C2F3A0E6A23B97373671 /* FMDB.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/FMDB/FMDB-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/FMDB/FMDB-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/FMDB/FMDB.modulemap";
+				PRODUCT_MODULE_NAME = FMDB;
+				PRODUCT_NAME = FMDB;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		62CF331F8CDAA4C1A61E89A2EC4008FC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4AD083D0DAD5612F827A73AA70405204 /* FMDB.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/FMDB/FMDB-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/FMDB/FMDB-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/FMDB/FMDB.modulemap";
+				PRODUCT_MODULE_NAME = FMDB;
+				PRODUCT_NAME = FMDB;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		649A8C3C5D81E1DD478DCF1F09C635CC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 556C13B19925F80B916D4DAEBC98FA26 /* Pods-GHTimeProfiler_Tests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-GHTimeProfiler_Tests/Pods-GHTimeProfiler_Tests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-GHTimeProfiler_Tests/Pods-GHTimeProfiler_Tests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		6D42DC62C4F2E194221DF89C48496C98 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -466,6 +787,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -493,18 +815,18 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Release;
 		};
-		54F3CA2531DD32D01B2B0AFB129B2B6F /* Release */ = {
+		7D1EECA3B8A7B0C714F2B1D6822967FD /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 010E5DA72902275E12265A6647DC59BF /* Pods-GHTimeProfiler_Tests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -533,12 +855,11 @@
 			};
 			name = Release;
 		};
-		68F9EE0D7E7BB59EE8793D06A68390FE /* Debug */ = {
+		A01A35B6AB7E19FE35010168C0E9079D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 84999EFA1FF7D36F1BA2F3E59F7CB55B /* Pods-GHTimeProfiler_Example.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -566,10 +887,74 @@
 			};
 			name = Debug;
 		};
-		7EF7227D9B20A1D549000096ACCB23D7 /* Debug */ = {
+		B110676BBBC4FE2F0F713E27A5D9EE8B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 527DB1175F87EEC985039DB65192E418 /* GHTimeProfiler.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/GHTimeProfiler/GHTimeProfiler-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/GHTimeProfiler/GHTimeProfiler-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/GHTimeProfiler/GHTimeProfiler.modulemap";
+				PRODUCT_MODULE_NAME = GHTimeProfiler;
+				PRODUCT_NAME = GHTimeProfiler;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		D4FC3D6D314E749DD73D427FF346BB31 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3FE1CA63C87DCD57F8E4937052E57E6A /* GHTimeProfiler.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/GHTimeProfiler/GHTimeProfiler-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/GHTimeProfiler/GHTimeProfiler-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/GHTimeProfiler/GHTimeProfiler.modulemap";
+				PRODUCT_MODULE_NAME = GHTimeProfiler;
+				PRODUCT_NAME = GHTimeProfiler;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		E4D0D44B090D4284607EBBC4E71A96C1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -592,6 +977,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -630,110 +1016,14 @@
 			};
 			name = Debug;
 		};
-		85C14D78C9C8B6565C23D20E65E9A0DE /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 909AF58D3027CFD4012BF371B74AEB11 /* GHTimeProfiler.debug.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/GHTimeProfiler/GHTimeProfiler-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/GHTimeProfiler/GHTimeProfiler-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/GHTimeProfiler/GHTimeProfiler.modulemap";
-				PRODUCT_MODULE_NAME = GHTimeProfiler;
-				PRODUCT_NAME = GHTimeProfiler;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		FAB857A955EA48D82C7C0F818D561CE8 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 556C13B19925F80B916D4DAEBC98FA26 /* Pods-GHTimeProfiler_Tests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-GHTimeProfiler_Tests/Pods-GHTimeProfiler_Tests-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-GHTimeProfiler_Tests/Pods-GHTimeProfiler_Tests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		FD8B5DF743E5DCDD9658CCB862FB0F2F /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 562B405E6F7691E63F9769CF4BD19E49 /* GHTimeProfiler.release.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/GHTimeProfiler/GHTimeProfiler-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/GHTimeProfiler/GHTimeProfiler-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/GHTimeProfiler/GHTimeProfiler.modulemap";
-				PRODUCT_MODULE_NAME = GHTimeProfiler;
-				PRODUCT_NAME = GHTimeProfiler;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
 		22188A34B463CD63F51F06FC58CFEB31 /* Build configuration list for PBXNativeTarget "Pods-GHTimeProfiler_Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				FAB857A955EA48D82C7C0F818D561CE8 /* Debug */,
-				54F3CA2531DD32D01B2B0AFB129B2B6F /* Release */,
+				649A8C3C5D81E1DD478DCF1F09C635CC /* Debug */,
+				7D1EECA3B8A7B0C714F2B1D6822967FD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -741,26 +1031,35 @@
 		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				7EF7227D9B20A1D549000096ACCB23D7 /* Debug */,
-				4BE66A09A74FD25164AAB3C2645B9B93 /* Release */,
+				E4D0D44B090D4284607EBBC4E71A96C1 /* Debug */,
+				6D42DC62C4F2E194221DF89C48496C98 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A0226E8203DE3DDDAFFE550CB02A0C63 /* Build configuration list for PBXNativeTarget "GHTimeProfiler" */ = {
+		50F52D370EE9AFEC7866FFE3E503CC08 /* Build configuration list for PBXNativeTarget "GHTimeProfiler" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				85C14D78C9C8B6565C23D20E65E9A0DE /* Debug */,
-				FD8B5DF743E5DCDD9658CCB862FB0F2F /* Release */,
+				B110676BBBC4FE2F0F713E27A5D9EE8B /* Debug */,
+				D4FC3D6D314E749DD73D427FF346BB31 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C19693E929DD9B329D709FD4D0433B13 /* Build configuration list for PBXNativeTarget "Pods-GHTimeProfiler_Example" */ = {
+		C1399A7446ACF6B2FCF807D5F58F10D6 /* Build configuration list for PBXNativeTarget "Pods-GHTimeProfiler_Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				68F9EE0D7E7BB59EE8793D06A68390FE /* Debug */,
-				2AF016EAF28B1136209FA0ACE4440B21 /* Release */,
+				A01A35B6AB7E19FE35010168C0E9079D /* Debug */,
+				1E699F2F510C61A8FBA61137DCB3166F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EE1CF8B84020151C94CD4280C9C11ED5 /* Build configuration list for PBXNativeTarget "FMDB" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3FA9605C6B67FAD3E695EECF4CEF13BB /* Debug */,
+				62CF331F8CDAA4C1A61E89A2EC4008FC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
