@@ -394,22 +394,22 @@ void gh_symbolicate(const uintptr_t* const backtraceBuffer,
 }
 
 /// 获得某个地址的符号信息
-bool gh_dladdr(const uintptr_t address, Dl_info* const info) {
+bool gh_dladdr(const uintptr_t memoryAddress, Dl_info* const info) {
     info->dli_fname = NULL;
     info->dli_fbase = NULL;
     info->dli_sname = NULL;
     info->dli_saddr = NULL;
 
     // 查询image索引
-    const uint32_t idx = gh_imageIndexContainingAddress(address);
+    const uint32_t idx = gh_imageIndexContainingAddress(memoryAddress);
     if (idx == UINT_MAX) {
         return false;
     }
     const struct mach_header* header = _dyld_get_image_header(idx);
     // ASLR 随机内存地址偏移量
     const uintptr_t imageVMAddrSlide = (uintptr_t)_dyld_get_image_vmaddr_slide(idx);
-    // 偏移后的地址
-    const uintptr_t VMAddress = address - imageVMAddrSlide;
+    // 偏移前地址
+    const uintptr_t VMAddress = memoryAddress - imageVMAddrSlide;
     // 偏移前基址 = __LINKEDIT.VM_Address - __LINK.File_Offset + silde的改变值
     // 获得image中 link_edit_segment偏移前的基址。
     const uintptr_t linkEditSegmentBase = gh_linkEditSegmentBaseOfImageIndex(idx) + imageVMAddrSlide;
@@ -506,7 +506,7 @@ uintptr_t gh_firstCmdAfterHeader(const struct mach_header* const header) {
 }
 
 /// segment_command 结构体中保存着结构体的基本信息，包括在文件中偏移地址,占用文件大小，虚拟地址，虚拟地址大小，用于解析 macho 文件，像一个索引一样，真正的指向的数据在下一部分的 data 部分。
-/// 通过image的index获得 存储符号表信息的segment 未偏移的基址。
+/// 通过image的index获得 存储符号表信息的segment VM的基址。
 uintptr_t gh_linkEditSegmentBaseOfImageIndex(const uint32_t idx) {
     // 遍历加载的image，通过idx获得对应镜像。
     const struct mach_header* header = _dyld_get_image_header(idx);
@@ -540,7 +540,7 @@ uintptr_t gh_linkEditSegmentBaseOfImageIndex(const uint32_t idx) {
 }
 
 /// 通过偏移后地址来反查 image的index
-uint32_t gh_imageIndexContainingAddress(const uintptr_t VMAddress) {
+uint32_t gh_imageIndexContainingAddress(const uintptr_t memoryAddress) {
     // 加载的image模块总数
     const uint32_t imageCount = _dyld_image_count();
     const struct mach_header* header = 0;
@@ -549,7 +549,7 @@ uint32_t gh_imageIndexContainingAddress(const uintptr_t VMAddress) {
         header = _dyld_get_image_header(imgIdx);
         if (header != NULL) {
             // 模块偏移前基址（0x100000000） = 模块偏移后的基地址（0x100758000）- ASLR偏移量（0x0000000000758000）
-            uintptr_t address = VMAddress - (uintptr_t)_dyld_get_image_vmaddr_slide(imgIdx);
+            uintptr_t VMAddress = memoryAddress - (uintptr_t)_dyld_get_image_vmaddr_slide(imgIdx);
             uintptr_t cmdPtr = gh_firstCmdAfterHeader(header);
             if (cmdPtr == 0) {
                 continue;
@@ -559,15 +559,15 @@ uint32_t gh_imageIndexContainingAddress(const uintptr_t VMAddress) {
                 if (loadCmd->cmd == LC_SEGMENT) {
                     const struct segment_command* segCmd = (struct segment_command*)cmdPtr;
                     // segment command的内存分配区域 包含目标地址。
-                    if (address >= segCmd->vmaddr &&
-                        address < segCmd->vmaddr + segCmd->vmsize) {
+                    if (VMAddress >= segCmd->vmaddr &&
+                        VMAddress < segCmd->vmaddr + segCmd->vmsize) {
                         return imgIdx;
                     }
                 }
                 else if (loadCmd->cmd == LC_SEGMENT_64) {
                     const struct segment_command_64* segCmd = (struct segment_command_64*)cmdPtr;
-                    if (address >= segCmd->vmaddr &&
-                        address < segCmd->vmaddr + segCmd->vmsize) {
+                    if (VMAddress >= segCmd->vmaddr &&
+                        VMAddress < segCmd->vmaddr + segCmd->vmsize) {
                         return imgIdx;
                     }
                 }
