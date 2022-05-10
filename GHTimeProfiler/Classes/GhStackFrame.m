@@ -290,28 +290,28 @@ const char* gh_lastPathEntry(const char* const path) {
 
 /// 调用栈的回溯入口
 NSString* gh_logBacktraceEntry(const int entryNum,
-                               const uintptr_t address,
+                               const uintptr_t memoryAddress,
                                const Dl_info* const dlInfo) {
     char faddrBuff[20];
     char saddrBuff[20];
     // image 文件名
-    const char* fname = gh_lastPathEntry(dlInfo->dli_fname);
-    if (fname == NULL) {
+    const char* imageName = gh_lastPathEntry(dlInfo->dli_fname);
+    if (imageName == NULL) {
         // 将 文件基址 打印到 faddrBuff 中
         // int sprintf ( char * str, const char * format, ... );
         sprintf(faddrBuff, POINTER_FMT, (uintptr_t)dlInfo->dli_fbase);
-        fname = faddrBuff;
+        imageName = faddrBuff;
     }
 
-    uintptr_t offset = address - (uintptr_t)dlInfo->dli_saddr;
+    uintptr_t offset = memoryAddress - (uintptr_t)dlInfo->dli_saddr;
     // 符号名
     const char* sname = dlInfo->dli_sname;
     if (sname == NULL) {
         sprintf(saddrBuff, POINTER_SHORT_FMT, (uintptr_t)dlInfo->dli_fbase);
         sname = saddrBuff;
-        offset = address - (uintptr_t)dlInfo->dli_fbase;
+        offset = memoryAddress - (uintptr_t)dlInfo->dli_fbase;
     }
-    return [NSString stringWithFormat:@"%-30s  0x%08" PRIxPTR " %s + %lu\n" ,fname, (uintptr_t)address, sname, offset];
+    return [NSString stringWithFormat:@"%-30s  0x%08" PRIxPTR " %s + %lu\n" ,imageName, (uintptr_t)memoryAddress, sname, offset];
 }
 
 #pragma -mark HandleMachineContext
