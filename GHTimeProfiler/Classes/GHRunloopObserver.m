@@ -8,18 +8,16 @@
 #import "GHRunloopObserver.h"
 #import "GhStackFrame.h"
 
-@interface GHRunloopObserver()
-{
+@interface GHRunloopObserver() {
     CFRunLoopObserverRef runloopObserver;
     dispatch_semaphore_t observerSemaphore;
     // 当前Runloop对象
     CFRunLoopActivity runloopActivity;
-    // 卡顿次数
-    int timeoutCount;
+    NSUInteger currentTimeoutIndex;
 }
+@property (copy, nonatomic) void(^timeoutCallback) (void);
 
 @end
-
 
 @implementation GHRunloopObserver
 
@@ -31,6 +29,10 @@
         sharedInstance = [[self alloc] init];
     });
     return sharedInstance;
+}
+
+- (void)registerWarningCallback:(void (^)(void))timeoutCallback {
+    self.timeoutCallback = timeoutCallback;
 }
 
 - (void)start {
@@ -46,6 +48,7 @@
 
 - (void)createRunloopObserver {
     if (runloopObserver) return;
+
     CFRunLoopObserverContext context = {0,(__bridge void*)self,NULL,NULL};
     runloopObserver = CFRunLoopObserverCreate(kCFAllocatorDefault,
                                               kCFRunLoopAllActivities,
@@ -58,12 +61,20 @@
     
     // Dispatch Semaphore保证同步
     observerSemaphore = dispatch_semaphore_create(0);
-    // 超时阈值
-    int threshold = 50;
+    self->currentTimeoutIndex = 0;
+    
+    if (self->_timeoutLimitCount == 0) {
+        self->_timeoutLimitCount = 3;
+    }
+
+    if (self->_timeoutThreshold == 0) {
+        self->_timeoutThreshold = 50;
+    }
+
     // 开启一个子线程监控
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
         while (YES) {
-            long semephoreWait = dispatch_semaphore_wait(self->observerSemaphore, dispatch_time(DISPATCH_TIME_NOW, threshold * NSEC_PER_MSEC));
+            long semephoreWait = dispatch_semaphore_wait(self->observerSemaphore, dispatch_time(DISPATCH_TIME_NOW, self->_timeoutThreshold * NSEC_PER_MSEC));
             if (semephoreWait != 0) {
                 if (!self->runloopObserver) {
                     // 监控结束
@@ -72,23 +83,22 @@
                 // 监测从BeforeSources到AfterWaiting的区间耗时，可以判断是否出现卡顿
                 if (self->runloopActivity == kCFRunLoopBeforeSources ||
                     self->runloopActivity == kCFRunLoopAfterWaiting) {
-                    if (++self->timeoutCount < 3) {
+                    if (++self->currentTimeoutIndex < self -> _timeoutLimitCount) {
                         continue;
                     }
                     dispatch_async(dispatch_get_global_queue(0, 0), ^{
                         // 记录超时事件
-//                        NSLog(@"[runloop] timeout");
-                        NSLog(@"[runloop] %@", [GhStackFrame gh_backtraceOfMainThread]);
+                        !self.timeoutCallback?:self.timeoutCallback();
+//                        NSLog(@"[runloop] %@", [GhStackFrame backtraceOfMainThread]);
                     });
                 }
             }
-            self->timeoutCount = 0;
+            self->currentTimeoutIndex = 0;
         }
     });
 }
 
 static void runloopCallBack(CFRunLoopObserverRef observer, CFRunLoopActivity activity, void *info) {
-
     // 记录Runloop的每次变更
     GHRunloopObserver *ob = (__bridge GHRunloopObserver *)info;
     ob->runloopActivity = activity;

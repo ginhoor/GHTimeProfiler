@@ -8,10 +8,11 @@
 #import <mach/mach.h>
 #import "GHCPUObserver.h"
 #import "GhStackFrame.h"
-
+#import "GHTimer.h"
 @interface GHCPUObserver ()
 
-@property (nonatomic, strong) NSTimer *timer;
+@property (nonatomic, strong) GHTimer *timer;
+@property (copy, nonatomic) void (^cpuUsageHighRateCallback)(int usage, thread_act_t thread);
 
 @end
 
@@ -27,30 +28,41 @@
     return sharedInstance;
 }
 
-- (void)start {
-    // 每3秒获取一次cpu信息
-    if (self.timer) {
-        return;
+- (void)registerWarningCallback:(void (^)(int usage, thread_act_t thread))cpuUsageHighRateCallback {
+    self.cpuUsageHighRateCallback = cpuUsageHighRateCallback;
+}
+
+- (void)startByInterval:(NSTimeInterval)interval {
+    if (self.timer) return;
+
+    if (self.cpuUsageHighRate == 0) {
+        self.cpuUsageHighRate = 80;
     }
-    self.timer = [NSTimer scheduledTimerWithTimeInterval:3
-                                                  target:self
-                                                selector:@selector(updateCPUInfo)
-                                                userInfo:nil
-                                                 repeats:YES];
+
+    self.timer = [[GHTimer alloc] init];
+    self.timer.interval = interval;
+    self.timer.delay = 0;
+    self.timer.delegate = self;
+    [self.timer start];
+}
+
+- (void)timerAction:(GHTimer *)timer {
+    [self updateCPUInfo];
+}
+
+/// 每3秒获取一次cpu信息
+- (void)start {
+    [self startByInterval:3];
 }
 
 - (void)stop {
-    if (!self.timer) {
-        return;
-    }
+    if (!self.timer) return;
     
-    [self.timer invalidate];
+    [self.timer stop];
     self.timer = nil;
 }
 
 - (void)updateCPUInfo {
-    // CPU使用率 80%
-    int cpuUsageHighRate = 80;
 
     thread_act_array_t threads;
     mach_msg_type_number_t threadCount = 0;
@@ -72,15 +84,15 @@
             if (!(threadBaseInfo->flags & TH_FLAGS_IDLE)) {
                 integer_t cpuUsage = threadBaseInfo->cpu_usage / 10;
                 // CPU使用率高于阈值
-                if (cpuUsage > cpuUsageHighRate) {
+                if (cpuUsage > self.cpuUsageHighRate) {
                     // 打印当前线程的堆栈
-                    NSLog(@"[thread] cpu over usage(%d)\n %@",cpuUsage,[GhStackFrame gh_backtraceOfThread:threads[i]]);
+                    thread_act_t thread = threads[i];
+                    !self.cpuUsageHighRateCallback?:self.cpuUsageHighRateCallback(cpuUsage, thread);
+//                    NSLog(@"[thread] cpu over usage(%d)\n %@",cpuUsage,[GhStackFrame gh_backtraceOfThread:threads[i]]);
                 }
             }
         }
     }
 }
-
-
 
 @end

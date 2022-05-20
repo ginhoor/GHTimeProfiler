@@ -11,9 +11,16 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface GHCPUObserver : NSObject
 
+@property (assign, nonatomic) NSUInteger cpuUsageHighRate;
+
 + (instancetype)sharedInstance;
+
+- (void)registerWarningCallback:(void(^)(int usage, thread_act_t thread))cpuUsageHighRateCallback;
+
 - (void)start;
+- (void)startByInterval:(NSTimeInterval)interval;
 - (void)stop;
+
 @end
 
 NS_ASSUME_NONNULL_END

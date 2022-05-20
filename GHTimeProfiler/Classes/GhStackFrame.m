@@ -81,47 +81,47 @@ static mach_port_t main_thread_id;
 
 #pragma -mark Implementation of interface
 
-+ (NSString *)gh_backtraceOfCurrentThread {
-    return [self gh_backtraceOfNSThread:[NSThread currentThread]];
++ (NSString *)backtraceOfCurrentThread {
+    return [self backtraceOfNSThread:[NSThread currentThread]];
 }
 
-+ (NSString *)gh_backtraceOfMainThread {
-    return [self gh_backtraceOfNSThread:[NSThread mainThread]];
++ (NSString *)backtraceOfMainThread {
+    return [self backtraceOfNSThread:[NSThread mainThread]];
 }
 
-+ (NSString *)gh_backtraceOfNSThread:(NSThread *)thread {
-    return gh_backtraceOfThread(gh_machThreadFromNSThread(thread));
++ (NSString *)backtraceOfNSThread:(NSThread *)thread {
+    return backtraceOfThread(gh_machThreadFromNSThread(thread));
 }
 
-+ (NSString *)gh_backtraceOfThread:(thread_t)thread {
-    return gh_backtraceOfThread(thread);
++ (NSString *)backtraceOfThread:(thread_t)thread {
+    return backtraceOfThread(thread);
 }
 
-+ (NSString *)gh_backtraceOfAllThread {
++ (NSString *)backtraceOfAllThread {
     thread_act_array_t threads;
     mach_msg_type_number_t thread_count = 0;
     const task_t this_task = mach_task_self();
 
     kern_return_t kr = task_threads(this_task, &threads, &thread_count);
-    if(kr != KERN_SUCCESS) {
+    if (kr != KERN_SUCCESS) {
         return @"Fail to get information of all threads";
     }
 
     NSMutableString *resultString = [NSMutableString stringWithFormat:@"Call Backtrace of %u threads:\n", thread_count];
     for(int i = 0; i < thread_count; i++) {
-        [resultString appendString:gh_backtraceOfThread(threads[i])];
+        [resultString appendString:backtraceOfThread(threads[i])];
     }
     return [resultString copy];
 }
 
-+ (NSString *)gh_backtraceOfFlutterUIThread {
++ (NSString *)backtraceOfFlutterUIThread {
     thread_act_array_t threads;
     mach_msg_type_number_t thread_count = 0;
     const task_t this_task = mach_task_self();
 
     kern_return_t kr = task_threads(this_task, &threads, &thread_count);
     if(kr != KERN_SUCCESS) {
-         // "Fail to get information of all threads";
+        // "Fail to get information of all threads";
     }
     thread_t flutterUIThread = 0;
     for (NSInteger i = 0; i < thread_count; i++) {
@@ -140,20 +140,20 @@ static mach_port_t main_thread_id;
     }
 
     if (flutterUIThread != 0) {
-        return gh_backtraceOfThread(flutterUIThread);
+        return backtraceOfThread(flutterUIThread);
     }
 
     return @"";
 }
 
-+ (NSString *)gh_backtraceOfAllFlutterThread {
++ (NSString *)backtraceOfAllFlutterThread {
     thread_act_array_t threads;
     mach_msg_type_number_t thread_count = 0;
     const task_t this_task = mach_task_self();
 
     kern_return_t kr = task_threads(this_task, &threads, &thread_count);
     if(kr != KERN_SUCCESS) {
-         // "Fail to get information of all threads";
+        // "Fail to get information of all threads";
     }
     NSMutableString *result = [[NSMutableString alloc] init];
     for (NSInteger i = 0; i < thread_count; i++) {
@@ -165,7 +165,7 @@ static mach_port_t main_thread_id;
             pthread_getname_np(pt, name, sizeof name);
         }
         [result appendString:[NSString stringWithFormat:@"name: %s" ,name]];
-        NSString *backstrace = gh_backtraceOfThread(thread);
+        NSString *backstrace = backtraceOfThread(thread);
         [result appendString:backstrace];
         [result appendString:@"\n"];
     }
@@ -173,7 +173,7 @@ static mach_port_t main_thread_id;
 }
 
 #pragma -mark Get call backtrace of a mach_thread
-NSString *gh_backtraceOfThread(thread_t thread) {
+NSString *backtraceOfThread(thread_t thread) {
     uintptr_t backtraceBuffer[50];
     int i = 0;
     NSMutableString *resultString = [[NSMutableString alloc] init];
@@ -211,7 +211,7 @@ NSString *gh_backtraceOfThread(thread_t thread) {
     const uintptr_t framePtr = gh_mach_framePointer(&machineContext);
     // read  16 byte start with fp, 8byte ->lr ,8byte -> last fp
     if (framePtr == 0 ||
-       gh_mach_copyMem((void *)framePtr, &frame, sizeof(frame)) != KERN_SUCCESS) {
+        gh_mach_copyMem((void *)framePtr, &frame, sizeof(frame)) != KERN_SUCCESS) {
         return @"Fail to get frame pointer\n";
     }
 
@@ -220,8 +220,8 @@ NSString *gh_backtraceOfThread(thread_t thread) {
         // 栈帧的函数返回地址，下一个调用指令地址
         backtraceBuffer[i] = frame.return_address;
         if (backtraceBuffer[i] == 0 ||
-           frame.previous == 0 ||
-           gh_mach_copyMem(frame.previous, &frame, sizeof(frame)) != KERN_SUCCESS) {
+            frame.previous == 0 ||
+            gh_mach_copyMem(frame.previous, &frame, sizeof(frame)) != KERN_SUCCESS) {
             break;
         }
     }
@@ -329,10 +329,10 @@ bool gh_fillThreadStateIntoMachineContext(thread_t thread, _STRUCT_MCONTEXT *mac
  1、函数的返回地址和参数。
  2、临时变量：包括函数的非静态局部变量以及编译器自动生成的其他临时变量。
  3、函数调用的上下文
-    栈是从高地址向低地址延伸，一个函数的栈帧用 ebp 和 esp 这两个寄存器来划定范围。
-    ebp 指向当前的栈帧的底部，esp 始终指向栈帧的顶部。
-    ebp 寄存器又被称为帧指针(Frame Pointer);
-    esp 寄存器又被称为栈指针(Stack Pointer);
+ 栈是从高地址向低地址延伸，一个函数的栈帧用 ebp 和 esp 这两个寄存器来划定范围。
+ ebp 指向当前的栈帧的底部，esp 始终指向栈帧的顶部。
+ ebp 寄存器又被称为帧指针(Frame Pointer);
+ esp 寄存器又被称为栈指针(Stack Pointer);
  */
 
 /// 帧指针
@@ -361,11 +361,11 @@ uintptr_t gh_mach_linkRegister(mcontext_t const machineContext) {
 
 /**
  kern_return_t vm_read_overwrite(
-     vm_map_t target_task,       // task任务
-     vm_address_t address,      // 栈帧指针FP
-     vm_size_t size,                   // 结构体大小 sizeof（StackFrameEntry）
-     vm_address_t data,            // 结构体指针 StackFrameEntry
-     vm_size_t *outsize             // 赋值大小
+ vm_map_t target_task,       // task任务
+ vm_address_t address,      // 栈帧指针FP
+ vm_size_t size,                   // 结构体大小 sizeof（StackFrameEntry）
+ vm_address_t data,            // 结构体指针 StackFrameEntry
+ vm_size_t *outsize             // 赋值大小
  );
  */
 /// 栈帧结构体
@@ -438,15 +438,15 @@ bool gh_dladdr(const uintptr_t memoryAddress, Dl_info* const info) {
             const struct symtab_command* symtabCmd = (struct symtab_command*)cmdPtr;
             /**
              struct nlist {
-               union {
-                  uint32_t n_strx;  //符号名在字符串表中的偏移量
-               } n_un;
-               uint8_t n_type;
-               uint8_t n_sect;
-               int16_t n_desc;
-               uint32_t n_value;    //符号在内存中的地址，类似于函数虚拟地址指针
+             union {
+             uint32_t n_strx;  //符号名在字符串表中的偏移量
+             } n_un;
+             uint8_t n_type;
+             uint8_t n_sect;
+             int16_t n_desc;
+             uint32_t n_value;    //符号在内存中的地址，类似于函数虚拟地址指针
              };
-            */
+             */
             // 符号表地址，一块连续的地址来存储mach-o所有的函数符号，存储结构为nlist
             // symoff：符号表偏移地址，存储在LC_SYMTAB的cmd中，symoff为相对基址的偏移量
             // symbolTab_addr = base_addr + symoff

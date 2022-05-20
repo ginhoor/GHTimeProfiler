@@ -11,13 +11,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface GhStackFrame : NSObject
 
-+ (NSString *)gh_backtraceOfCurrentThread;
-+ (NSString *)gh_backtraceOfMainThread;
-+ (NSString *)gh_backtraceOfNSThread:(NSThread *)thread;
-+ (NSString *)gh_backtraceOfThread:(thread_t)thread;
-+ (NSString *)gh_backtraceOfAllThread;
-+ (NSString *)gh_backtraceOfFlutterUIThread;
-+ (NSString *)gh_backtraceOfAllFlutterThread;
++ (NSString *)backtraceOfCurrentThread;
++ (NSString *)backtraceOfMainThread;
++ (NSString *)backtraceOfNSThread:(NSThread *)thread;
++ (NSString *)backtraceOfThread:(thread_t)thread;
++ (NSString *)backtraceOfAllThread;
++ (NSString *)backtraceOfFlutterUIThread;
++ (NSString *)backtraceOfAllFlutterThread;
 
 @end
 
