@@ -31,6 +31,15 @@
     return sharedInstance;
 }
 
+- (instancetype)init {
+    self = [super init];
+    if (self) {
+        _timeoutLimitCount = 3;
+        _timeoutThreshold = 50;
+    }
+    return self;
+}
+
 - (void)registerWarningCallback:(void (^)(void))timeoutCallback {
     self.timeoutCallback = timeoutCallback;
 }
@@ -62,14 +71,6 @@
     // Dispatch Semaphore保证同步
     observerSemaphore = dispatch_semaphore_create(0);
     self->currentTimeoutIndex = 0;
-    
-    if (self->_timeoutLimitCount == 0) {
-        self->_timeoutLimitCount = 3;
-    }
-
-    if (self->_timeoutThreshold == 0) {
-        self->_timeoutThreshold = 50;
-    }
 
     // 开启一个子线程监控
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
