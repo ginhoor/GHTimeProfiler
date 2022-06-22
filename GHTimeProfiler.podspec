@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'GHTimeProfiler'
-  s.version          = '1.2.1'
+  s.version          = '1.3.0'
   s.summary          = 'A short description of GHTimeProfiler.'
 
 # This description is used to generate tags and improve search results.
@@ -31,12 +31,25 @@ TODO: Add long description of the pod here.
   s.ios.deployment_target = '10.0'
 
   s.source_files = 'GHTimeProfiler/Classes/**/*'
-  
-  # s.resource_bundles = {
-  #   'GHTimeProfiler' => ['GHTimeProfiler/Assets/*.png']
-  # }
 
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  s.dependency 'FMDB'
+  s.default_subspec = 'Core'
+
+  s.subspec 'Core' do |ss|
+    ss.source_files = 'GHTimeProfiler/Classes/Core/**/*'
+
+  end
+
+  s.subspec 'Observer' do |ss|
+    ss.source_files = 'GHTimeProfiler/Classes/Observer/**/*'
+    ss.dependency 'GHTimeProfiler/Core'
+  end
+
+  s.subspec 'TimeProfiler' do |ss|
+    ss.source_files = 'GHTimeProfiler/Classes/TimeProfiler/**/*'
+
+    ss.dependency 'GHTimeProfiler/Core'
+    ss.dependency 'FMDB'
+  end
+
+
 end

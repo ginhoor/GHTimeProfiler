@@ -7,7 +7,7 @@
 
 #import <mach/mach.h>
 #import "GHCPUObserver.h"
-#import "GhStackFrame.h"
+#import "GHStackFrame.h"
 #import "GHTimer.h"
 @interface GHCPUObserver ()
 
@@ -88,7 +88,7 @@
                     // 打印当前线程的堆栈
                     thread_act_t thread = threads[i];
                     !self.cpuUsageHighRateCallback?:self.cpuUsageHighRateCallback(cpuUsage, thread);
-//                    NSLog(@"[thread] cpu over usage(%d)\n %@",cpuUsage,[GhStackFrame gh_backtraceOfThread:threads[i]]);
+//                    NSLog(@"[thread] cpu over usage(%d)\n %@",cpuUsage,[GHStackFrame gh_backtraceOfThread:threads[i]]);
                 }
             }
         }

@@ -1,5 +1,5 @@
 //
-//  GhStackFrame.h
+//  GHStackFrame.h
 //  
 //
 //  Created by sjh on 2021/8/10.
@@ -9,7 +9,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface GhStackFrame : NSObject
+@interface GHStackFrame : NSObject
 
 + (NSString *)backtraceOfCurrentThread;
 + (NSString *)backtraceOfMainThread;

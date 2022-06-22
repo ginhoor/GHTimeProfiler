@@ -1,5 +1,5 @@
 //
-//  GhStackFrame.m
+//  GHStackFrame.m
 //
 //
 //  Created by sjh on 2021/8/10.
@@ -13,7 +13,7 @@
 #include <mach-o/dyld.h>
 #include <mach-o/nlist.h>
 
-#import "GhStackFrame.h"
+#import "GHStackFrame.h"
 
 
 
@@ -66,14 +66,14 @@
 #define gh_NLIST struct nlist
 #endif
 
-typedef struct GhStackFrameEntry {
-    const struct GhStackFrameEntry *const previous; //前一个栈帧的帧地址
+typedef struct GHStackFrameEntry {
+    const struct GHStackFrameEntry *const previous; //前一个栈帧的帧地址
     const uintptr_t return_address;                 //栈帧的函数返回地址，下一个指令地址
-} GhStackFrameEntry;
+} GHStackFrameEntry;
 
 static mach_port_t main_thread_id;
 
-@implementation GhStackFrame
+@implementation GHStackFrame
 
 + (void)load {
     main_thread_id = mach_thread_self();
@@ -206,7 +206,7 @@ NSString *backtraceOfThread(thread_t thread) {
         return @"Fail to get instruction address\n";
     }
 
-    GhStackFrameEntry frame = {0};
+    GHStackFrameEntry frame = {0};
     // 获取帧地址，获得当前栈帧的栈底地址。
     const uintptr_t framePtr = gh_mach_framePointer(&machineContext);
     // read  16 byte start with fp, 8byte ->lr ,8byte -> last fp

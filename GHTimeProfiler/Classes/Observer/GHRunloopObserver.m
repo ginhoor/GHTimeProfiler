@@ -6,7 +6,7 @@
 //
 
 #import "GHRunloopObserver.h"
-#import "GhStackFrame.h"
+#import "GHStackFrame.h"
 
 @interface GHRunloopObserver() {
     CFRunLoopObserverRef runloopObserver;
@@ -90,7 +90,7 @@
                     dispatch_async(dispatch_get_global_queue(0, 0), ^{
                         // 记录超时事件
                         !self.timeoutCallback?:self.timeoutCallback();
-//                        NSLog(@"[runloop] %@", [GhStackFrame backtraceOfMainThread]);
+//                        NSLog(@"[runloop] %@", [GHStackFrame backtraceOfMainThread]);
                     });
                 }
             }
