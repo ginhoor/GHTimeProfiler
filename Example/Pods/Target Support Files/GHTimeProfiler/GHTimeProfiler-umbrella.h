@@ -10,11 +10,10 @@
 #endif
 #endif
 
+#import "GHStackFrame.h"
+#import "GHTimer.h"
 #import "fishhook.h"
-#import "GHCPUObserver.h"
 #import "GHObjcMsgSendHook.h"
-#import "GHRunloopObserver.h"
-#import "GhStackFrame.h"
 #import "GHTimeProfiler.h"
 #import "GHTimeProfilerHeader.h"
 #import "GHTimeProfilerLog.h"

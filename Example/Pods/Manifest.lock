@@ -2,11 +2,13 @@ PODS:
   - FMDB (2.7.5):
     - FMDB/standard (= 2.7.5)
   - FMDB/standard (2.7.5)
-  - GHTimeProfiler (1.0.0):
+  - GHTimeProfiler/Core (1.3.1)
+  - GHTimeProfiler/TimeProfiler (1.3.1):
     - FMDB
+    - GHTimeProfiler/Core
 
 DEPENDENCIES:
-  - GHTimeProfiler (from `../`)
+  - GHTimeProfiler/TimeProfiler (from `../`)
 
 SPEC REPOS:
   trunk:
@@ -18,8 +20,8 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
-  GHTimeProfiler: cf00b787d723b7b83b9b4da942860dad1a1296ca
+  GHTimeProfiler: 88bd59b92d2f83cc94ffc5459f22d1bc7d4edc04
 
-PODFILE CHECKSUM: 0516a552b6f94c94d022c027eee6b6f46d294e5a
+PODFILE CHECKSUM: 7acf2d72c50d9abd9905f8bd6e420a4db2b3ed99
 
-COCOAPODS: 1.11.2
+COCOAPODS: 1.11.3
